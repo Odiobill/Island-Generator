@@ -1,0 +1,2 @@
+﻿exampleText=This is an Example Text
+haveFun=Have fun!
