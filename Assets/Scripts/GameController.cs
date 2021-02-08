@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public Translator translator;
-    public Text textToTranslate;
-
+    public Text exampleText;
+    public string playerName;
+    
     // Start is called before the first frame update
     void Start()
     {
-        translator.Load(SystemLanguage.English);
-        textToTranslate.text = translator.Resolve(textToTranslate.text);
+        Translator.Load(SystemLanguage.Italian);
+
+        Dictionary<string, string> subKeys = new Dictionary<string, string>();
+        subKeys.Add("PLAYERNAME", playerName);
+        exampleText.text = Translator.Resolve(exampleText.text, subKeys);
     }
 
 }

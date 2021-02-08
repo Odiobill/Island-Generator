@@ -1,0 +1,2 @@
+﻿exampleText=Questo é un testo di esempio
+haveFun=Buon divertimento, PLAYERNAME!
