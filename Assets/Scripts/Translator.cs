@@ -11,14 +11,14 @@ public static class Translator
     {
         _lang.Clear();
 
-        TextAsset file = Resources.Load<TextAsset>(path + language);
+        var file = Resources.Load<TextAsset>(path + language);
         if (file != null)
         {
-            foreach (string line in file.text.Split('\n'))
+            foreach (var line in file.text.Split('\n'))
             {
                 if (line.Contains('='))
                 {
-                    string[] part = line.Split('=');
+                    var part = line.Split('=');
                     _lang[part[0]] = part[1];
                 }
             }
@@ -31,10 +31,10 @@ public static class Translator
 
     public static string Resolve(string key, Dictionary<string, string> subKeys = null)
     {
-        string translation = _lang.ContainsKey(key) ? Regex.Unescape(_lang[key]) : key;
+        var translation = _lang.ContainsKey(key) ? Regex.Unescape(_lang[key]) : key;
         if (subKeys != null)
         {
-            foreach (string subKey in subKeys.Keys)
+            foreach (var subKey in subKeys.Keys)
             {
                 translation = translation.Replace(subKey, subKeys[subKey]);
             }
