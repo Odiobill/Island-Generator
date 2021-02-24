@@ -7,15 +7,14 @@ public class GameController : MonoBehaviour
 {
     public Text exampleText;
     public string playerName;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        Translator.Load(SystemLanguage.Italian);
+        Translator.Load(SystemLanguage.English);
 
         Dictionary<string, string> subKeys = new Dictionary<string, string>();
         subKeys.Add("PLAYERNAME", playerName);
         exampleText.text = Translator.Resolve(exampleText.text, subKeys);
     }
-
 }
